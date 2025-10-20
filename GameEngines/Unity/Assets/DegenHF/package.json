@@ -1,0 +1,33 @@
+{
+  "name": "com.degenhf.eccauth",
+  "version": "1.0.0",
+  "displayName": "DegenHF ECC Authentication",
+  "description": "Blockchain-grade ECC authentication for Unity games",
+  "unity": "2020.3",
+  "unityRelease": "0f1",
+  "documentationUrl": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework",
+  "changelogUrl": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework",
+  "licensesUrl": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework",
+  "dependencies": {
+  },
+  "keywords": [
+    "authentication",
+    "security",
+    "ecc",
+    "cryptography",
+    "unity",
+    "gaming"
+  ],
+  "author": {
+    "name": "DegenHF",
+    "email": "degenwithheart@github.com",
+    "url": "https://github.com/degenwithheart"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Authentication",
+      "description": "Basic authentication example",
+      "path": "Samples~/BasicAuthentication"
+    }
+  ]
+}

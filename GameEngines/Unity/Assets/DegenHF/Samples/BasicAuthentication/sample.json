@@ -1,0 +1,11 @@
+{
+  "displayName": "Basic Authentication",
+  "description": "Demonstrates basic user registration and login functionality",
+  "path": "Samples~/BasicAuthentication",
+  "dependencies": [
+    {
+      "name": "com.degenhf.eccauth",
+      "version": "1.0.0"
+    }
+  ]
+}
