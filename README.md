@@ -1,4 +1,4 @@
-# 🔐 DegenHF  
+# 🔐 DegenHF
 ### *Next-Gen Authentication & Encryption Framework*
 
 > **Beyond Hashing — Cryptography Evolved for the Degen Age.**
@@ -11,7 +11,7 @@ It’s inspired by bcrypt’s simplicity, JWT’s portability, and ECC’s crypt
 
 ## 🧠 Overview
 
-DegenHF provides a **universal security layer** that leverages **Elliptic Curve Cryptography (ECC)** combined with **modern hash algorithms** (SHA-512, Argon2, BLAKE3).  
+DegenHF provides a **universal security layer** that leverages **Elliptic Curve Cryptography (ECC)** combined with **modern hash algorithms** (Argon2, BLAKE3).  
 It’s framework-agnostic and blockchain-independent — focused purely on **authentication**, **data protection**, and **cryptographic integrity**.
 
 ---
@@ -20,10 +20,10 @@ It’s framework-agnostic and blockchain-independent — focused purely on **aut
 
 | Principle | Description |
 |------------|-------------|
-| **Hybrid Cryptography** | Combines ECC with SHA-3, Argon2, and BLAKE3 for resilient, GPU-hard security. |
-| **Unified Auth System** | Role-based authentication (user, admin, system) with ECC-signed tokens. |
-| **Cross-Language Portability** | One cryptographic backbone across Python, Go, Rust, JS, and more. |
-| **Forward-Compatible** | Built to evolve into post-quantum hybrid encryption (ECC + Kyber). |
+| **Hybrid Cryptography** | Combines ECC secp256k1 with Argon2+BLAKE3 for resilient, GPU-hard security. |
+| **Unified Auth System** | JWT-based authentication with ECC-signed tokens and session management. |
+| **Cross-Language Portability** | Consistent API across Python, JavaScript, Java, and PHP frameworks. |
+| **Performance Optimized** | LRU caching, constant-time operations, and async support. |
 | **Zero Blockchain Dependency** | Uses the math behind crypto — not the chain. |
 
 ---
@@ -32,118 +32,297 @@ It’s framework-agnostic and blockchain-independent — focused purely on **aut
 
 ### 1. **ECC Core Engine**
 Implements secure elliptic curve operations:
-- Point addition, doubling, and scalar multiplication  
-- Curve validation and key generation  
-- ECDH (Elliptic Curve Diffie–Hellman)  
-- ECDSA-like signature creation and verification  
-
-Supported curves (planned):
-- `Custom25519` — based on 2²⁵⁵ - 19  
-- `DegenP256` — custom NIST P-256 variant  
-
----
+- ECC secp256k1 key pair generation
+- ECDSA signature creation and verification
+- Constant-time cryptographic operations
+- Thread-safe concurrent operations
 
 ### 2. **Hash Layer (HF)**
-Hybrid password hashing system using ECC transformations.
+Hybrid password hashing system using ECC + Argon2 + BLAKE3.
 
 **Process:**
-1. Derive scalar from password + salt  
-2. Multiply by generator point G on custom curve  
-3. Hash resulting coordinates with SHA-512 or Argon2  
-4. Output bcrypt-style formatted string:
-
-```
-$degenhf$curve=custom25519$algo=argon2id$salt=[b64]$hash=[b64]
-```
-
----
+1. Generate secure random salt
+2. Argon2 password hashing (configurable iterations)
+3. Additional BLAKE3 hashing for extra security
+4. ECC key derivation and signing
+5. Output structured hash format
 
 ### 3. **Auth Layer**
 Handles:
-- Role-based authentication (user, admin, system)  
-- ECC-signed JWT-like tokens  
-- Token validation and key rotation  
-- Optional AES-encrypted cookie/session sealing  
+- User registration and authentication
+- JWT token creation with ES256 signing
+- Token verification and validation
+- Session management with secure keys
+
+### 4. **Caching Layer**
+Performance optimizations:
+- LRU cache for token verification (5-minute TTL)
+- Configurable cache sizes and timeouts
+- Thread-safe cache operations
 
 ---
 
-### 4. **Encryption Suite**
-ECC-based encryption/decryption powered by ECDH + AES-GCM.
+## 📦 Available Packages
 
-Example (conceptual):
+### ✅ **Implemented**
+
+| Language | Frameworks | Status |
+|-----------|-------------|---------|
+| **Python** | Django, Flask, FastAPI | ✅ Complete |
+| **JavaScript** | Express.js, Next.js, NestJS | ✅ Complete |
+| **Java** | Spring Boot, Jakarta EE | ✅ Complete |
+| **PHP** | Laravel | ✅ Complete |
+
+### 🚧 **Planned**
+
+| Language | Frameworks | Status |
+|-----------|-------------|---------|
+| **Go** | Gin, Echo, Revel | 📋 Planned |
+| **C#** | ASP.NET Core, .NET | 📋 Planned |
+| **Ruby** | Rails, Sinatra | 📋 Planned |
+| **Rust** | Rocket, Actix | 📋 Planned |
+| **Kotlin** | Ktor, Spring Boot | 📋 Planned |
+| **Swift** | Vapor, Kitura | 📋 Planned |
+
+---
+
+## 🚀 Quick Start
+
+### Python (Django)
 ```python
-encrypt(data, public_key)
-decrypt(data, private_key)
+from degenhf_django.core import EccAuthHandler
+
+# Initialize
+auth = EccAuthHandler()
+
+# Register user
+user_id = auth.register('username', 'password123')
+
+# Authenticate
+token = auth.authenticate('username', 'password123')
+
+# Verify token
+user_data = auth.verify_token(token)
 ```
 
-This allows shared secret derivation for secure communication between systems, without shared passwords.
+### JavaScript (Express.js)
+```javascript
+const eccAuth = require('degenhf-express');
+
+// Register middleware
+app.use('/auth', eccAuth.middleware);
+
+// Register user
+app.post('/register', async (req, res) => {
+  const userId = await eccAuth.register(req.body.username, req.body.password);
+  res.json({ userId });
+});
+
+// Login
+app.post('/login', async (req, res) => {
+  const token = await eccAuth.authenticate(req.body.username, req.body.password);
+  res.json({ token });
+});
+```
+
+### Java (Spring Boot)
+```java
+@SpringBootApplication
+@EnableEccAuth
+public class MyApp {
+    public static void main(String[] args) {
+        SpringApplication.run(MyApp.class, args);
+    }
+}
+
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
+
+    @Autowired
+    private EccAuthService authService;
+
+    @PostMapping("/register")
+    public ResponseEntity<?> register(@RequestBody RegisterRequest request) {
+        String userId = authService.register(request.getUsername(), request.getPassword());
+        return ResponseEntity.ok(Map.of("userId", userId));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest request) {
+        String token = authService.authenticate(request.getUsername(), request.getPassword());
+        return ResponseEntity.ok(Map.of("token", token));
+    }
+}
+```
+
+### PHP (Laravel)
+```php
+use DegenHF\EccAuth\Facades\EccAuth;
+
+// Register user
+$userId = EccAuth::register('username', 'password123');
+
+// Authenticate
+$token = EccAuth::authenticate('username', 'password123');
+
+// Verify token
+$user = EccAuth::verifyToken($token);
+```
 
 ---
 
-### 5. **Session & Token Layer**
-Implements:
-- Secure session lifecycle  
-- ECC-derived session keys  
-- Token revocation and re-signing  
-- Optional biometric → ECC hash binding  
+## 🔧 Installation
+
+### Python
+```bash
+pip install degenhf-django
+pip install degenhf-flask
+pip install degenhf-fastapi
+```
+
+### JavaScript
+```bash
+npm install degenhf-express
+npm install degenhf-nextjs
+npm install degenhf-nestjs
+```
+
+### Java
+```xml
+<dependency>
+    <groupId>com.degenhf</groupId>
+    <artifactId>ecc-auth-spring-boot</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
+### PHP
+```bash
+composer require degenhf/ecc-auth-laravel
+```
 
 ---
 
-## 💡 Conceptual API Examples
+## 🔑 Security Features
 
-### **Python**
+| Feature | Implementation |
+|----------|----------------|
+| **ECC Cryptography** | secp256k1 curve with constant-time operations |
+| **Password Hashing** | Argon2 + BLAKE3 hybrid approach |
+| **Token Signing** | ES256 (ECDSA) signatures |
+| **Session Security** | ECDH key exchange + AES-GCM |
+| **Cache Security** | LRU with automatic expiration |
+| **Timing Attacks** | Constant-time comparison operations |
+
+---
+
+## ⚡ Performance Optimizations
+
+- **LRU Caching**: 5-minute TTL for token verification
+- **Async Operations**: Non-blocking password hashing
+- **Thread Safety**: Concurrent session management
+- **Configurable Parameters**: Adjustable security/performance balance
+- **Memory Efficient**: Minimal allocations and garbage collection
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
+```bash
+# Security parameters
+ECC_AUTH_HASH_ITERATIONS=100000
+ECC_AUTH_TOKEN_EXPIRY=3600
+ECC_AUTH_CACHE_SIZE=10000
+ECC_AUTH_CACHE_TTL=300
+
+# Framework-specific settings
+DJANGO_ECC_SECRET_KEY=your-secret-key
+SPRING_ECC_CONFIG_PATH=/path/to/config
+```
+
+### Programmatic Configuration
 ```python
-from degenhf import hash_password, verify_password, sign_token
-
-hash = hash_password("hunter2")
-assert verify_password("hunter2", hash)
-
-token = sign_token({"user": "admin"})
-```
-
-### **Node.js**
-```js
-import { hashPassword, verifyPassword, encrypt, decrypt } from 'degenhf';
-
-const hash = await hashPassword('hunter2');
-const valid = await verifyPassword('hunter2', hash);
-const enc = await encrypt('secret message', publicKey);
-```
-
-### **Rust**
-```rust
-use degenhf::crypto::{hash_password, verify_password};
-
-let hash = hash_password("hunter2");
-let valid = verify_password("hunter2", &hash);
+# Python
+auth = EccAuthHandler(
+    hash_iterations=50000,
+    token_expiry=7200,
+    cache_size=5000
+)
 ```
 
 ---
 
-## 🌍 Framework Compatibility
+## 📚 API Reference
 
-| Language | Frameworks |
-|-----------|-------------|
-| **Python** | Django, Flask, FastAPI |
-| **Go** | Gin, Echo, Revel |
-| **JavaScript / TypeScript** | Express, Next.js, NestJS |
-| **Java** | Spring Boot, Jakarta EE |
-| **C#** | ASP.NET Core, .NET |
-| **PHP** | Laravel, Symfony |
-| **Ruby** | Rails, Sinatra |
-| **Rust** | Rocket, Actix |
-| **Kotlin** | Ktor, Spring Boot |
-| **Swift** | Vapor, Kitura |
+### Core Methods
+
+#### `register(username, password)`
+Register a new user with ECC-secured password hashing.
+
+#### `authenticate(username, password)`
+Authenticate user and return JWT token.
+
+#### `verify_token(token)`
+Verify JWT token and return user data.
+
+#### `create_session(user_id)`
+Create secure session with ECC-derived keys.
+
+#### `get_session(session_id)`
+Retrieve session data with validation.
 
 ---
 
-## 🔑 Security Stack
+## 🧪 Testing
 
-| Component | Role |
-|------------|------|
-| **ECC Hashing** | Irreversible password transformations |
-| **ECDH** | Shared secret derivation for encryption |
-| **AES-GCM** | Fast, symmetric data encryption |
-| **ECC Signatures** | Token signing and verification |
-| **Argon2 Integration** | GPU/ASIC-resistant password hardening |
-| **Salt + Curve ID** | Built-in replay and curve collision prevention |
+Each package includes comprehensive unit tests:
+
+```bash
+# Python
+pytest
+
+# JavaScript
+npm test
+
+# Java
+mvn test
+
+# PHP
+phpunit
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Implement your framework package
+4. Add comprehensive tests
+5. Submit a pull request
+
+See `framework_priority.txt` for implementation roadmap.
+
+---
+
+## 📄 License
+
+MIT License - see LICENSE file for details.
+
+---
+
+## ⚠️ Security Notice
+
+This framework implements cryptographic operations. While designed with security best practices, always:
+- Use strong, unique passwords
+- Keep private keys secure
+- Regularly rotate tokens and sessions
+- Monitor for security updates
+
+For production use, consider additional security measures and regular security audits.
+
+---
+
+*Built for the degens, by the degens — because your security shouldn't be boring.*
