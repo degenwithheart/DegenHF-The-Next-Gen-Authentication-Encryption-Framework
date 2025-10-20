@@ -1,0 +1,67 @@
+{
+  "name": "degenhf-cocos-creator",
+  "version": "1.0.0",
+  "description": "DegenHF ECC Authentication Integration for Cocos Creator",
+  "main": "assets/scripts/DegenHF/ECCAuthHandler.js",
+  "scripts": {
+    "test": "echo \"Run tests in Cocos Creator environment\"",
+    "build": "echo \"No build step required for Cocos Creator integration\"",
+    "lint": "echo \"Linting not applicable for Cocos Creator scripts\""
+  },
+  "keywords": [
+    "cocos-creator",
+    "authentication",
+    "ecc",
+    "cryptography",
+    "blockchain",
+    "security",
+    "game-development"
+  ],
+  "author": "DegenHF Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/degenwithheart/DegenHF.git",
+    "directory": "GameEngines/CocosCreator"
+  },
+  "bugs": {
+    "url": "https://github.com/degenwithheart/DegenHF/issues"
+  },
+  "homepage": "https://github.com/degenwithheart/DegenHF#readme",
+  "engines": {
+    "cocos-creator": ">=3.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "peerDependencies": {
+    "cocos-creator": ">=3.0.0"
+  },
+  "files": [
+    "assets/scripts/DegenHF/",
+    "assets/scenes/",
+    "README.md",
+    "package.json"
+  ],
+  "cocos-creator": {
+    "version": ">=3.0.0",
+    "platforms": [
+      "web",
+      "android",
+      "ios",
+      "windows",
+      "mac",
+      "linux"
+    ],
+    "features": [
+      "authentication",
+      "ecc-cryptography",
+      "session-management",
+      "token-system"
+    ]
+  },
+  "directories": {
+    "lib": "assets/scripts/DegenHF",
+    "example": "assets/scenes",
+    "test": "assets/scripts/DegenHF"
+  }
+}

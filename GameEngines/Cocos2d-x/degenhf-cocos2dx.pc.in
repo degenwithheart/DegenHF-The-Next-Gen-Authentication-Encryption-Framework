@@ -1,0 +1,11 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: degenhf-cocos2dx
+Description: DegenHF ECC Authentication for Cocos2d-x
+Version: 1.0.0
+Requires: openssl, RapidJSON
+Libs: -L${libdir} -ldegenhf_cocos2dx
+Cflags: -I${includedir}/DegenHF/Cocos2dx
