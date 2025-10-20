@@ -4,7 +4,7 @@ version = "1.0.0"
 edition = "2021"
 authors = ["DegenHF <degenhf@example.com>"]
 description = "ECC-based authentication for Rocket.rs with enhanced security"
-repository = "https://github.com/degenwithheart/DegenHF"
+repository = "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework"
 license = "MIT"
 
 [dependencies]

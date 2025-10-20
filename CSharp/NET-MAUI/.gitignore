@@ -1,0 +1,79 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Visual Studio
+.vs/
+.vscode/
+*.sln
+*.csproj.user
+*.csproj.nuget.cache
+*.csproj.nuget.g.props
+*.csproj.nuget.g.targets
+
+# MAUI
+Platforms/
+*.apk
+*.aab
+*.ipa
+*.app
+*.dSYM
+*.framework
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+*.testsettings
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+*.nuget.props
+*.nuget.targets
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup files
+*.bak
+*.backup
+
+# Coverage reports
+coverage/
+*.profraw
+*.xcov
+
+# Build artifacts
+artifacts/
+publish/

@@ -11,7 +11,7 @@ setup(
     description="ECC-based authentication package for FastAPI with enhanced security and performance",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework",
+    url="https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework",
     packages=find_packages(),
     classifiers=[
         "Development Status :: 5 - Production/Stable",

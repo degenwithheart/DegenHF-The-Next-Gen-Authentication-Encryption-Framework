@@ -74,20 +74,25 @@ Performance optimizations:
 | **JavaScript** | Express.js, Next.js, NestJS | ✅ Complete |
 | **Java** | Spring Boot, Jakarta EE | ✅ Complete |
 | **PHP** | Laravel | ✅ Complete |
-| **Go** | Gin, Echo | ✅ Complete |
-| **C#** | ASP.NET Core | ✅ Complete |
-| **Rust** | Rocket | ✅ Complete |
+| **Kotlin** | Ktor, Spring Boot | ✅ Complete |
+| **Swift** | Vapor, Kitura | ✅ Complete |
+| **Ruby** | Rails, Sinatra | ✅ Complete |
+| **Go** | Gin, Echo, Revel | ✅ Complete |
+| **C#** | ASP.NET Core, .NET MAUI | ✅ Complete |
+| **Rust** | Rocket, Actix | ✅ Complete |
 
 ### 🚧 **Planned**
 
 | Language | Frameworks | Status |
 |-----------|-------------|---------|
 | **Go** | Gin, Echo, Revel | 📋 Planned |
-| **C#** | ASP.NET Core, .NET | 📋 Planned |
 | **Ruby** | Rails, Sinatra | 📋 Planned |
-| **Rust** | Rocket, Actix | 📋 Planned |
-| **Kotlin** | Ktor, Spring Boot | 📋 Planned |
-| **Swift** | Vapor, Kitura | 📋 Planned |
+| **Rust** | Rocket, Actix | ✅ Complete |
+
+### 🎉 **All Frameworks Complete!**
+
+All planned authentication frameworks have been successfully implemented with consistent ECC secp256k1 cryptography, hybrid Argon2+BLAKE3 password hashing, and ES256 JWT signing across all languages and frameworks.
+| **Kotlin** | Spring Boot | 📋 Planned |
 
 ---
 
@@ -184,25 +189,25 @@ $user = EccAuth::verifyToken($token);
 ### Python
 ```bash
 # Django
-pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Django
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Django
 
 # Flask
-pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Flask
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Flask
 
 # FastAPI
-pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/FastAPI
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/FastAPI
 ```
 
 ### JavaScript
 ```bash
 # Express.js
-npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Express.js
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Express.js
 
 # Next.js
-npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Next.js
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Next.js
 
 # NestJS
-npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/NestJS
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/NestJS
 ```
 
 ### Java
@@ -237,7 +242,7 @@ npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authenticatio
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework"
+            "url": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework"
         }
     ],
     "require": {
@@ -271,7 +276,7 @@ dotnet add package DegenHF.EccAuth.AspNetCore --version 1.0.0
 ```toml
 # Add to Cargo.toml
 [dependencies]
-degenhf-ecc-auth-rocket = { git = "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework", path = "Rust/Rocket" }
+degenhf-ecc-auth-rocket = { git = "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework-The-Next-Gen-Authentication-Encryption-Framework", path = "Rust/Rocket" }
 ```
 
 ---

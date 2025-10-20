@@ -19,7 +19,7 @@ Since this package is currently only available from the GitHub repository, add i
 
 ```toml
 [dependencies]
-degenhf-ecc-auth-rocket = { git = "https://github.com/degenwithheart/DegenHF", path = "Rust/Rocket" }
+degenhf-ecc-auth-rocket = { git = "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework", path = "Rust/Rocket" }
 ```
 
 ## Quick Start

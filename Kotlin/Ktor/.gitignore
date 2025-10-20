@@ -1,0 +1,54 @@
+# Gradle
+.gradle/
+build/
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Kotlin
+*.class
+*.log
+*.toc
+.kotlin/
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+.env.local
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+
+# Coverage reports
+jacoco/
+coverage/
+
+# Application configuration
+application.conf
+application-local.conf
+
+# Backup files
+*.bak
+*.backup

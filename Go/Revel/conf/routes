@@ -1,0 +1,12 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+module:test
+
+GET     /                                       App.Index
+GET     /api/auth/health                        Auth.Health
+POST    /api/auth/register                      Auth.Register
+POST    /api/auth/authenticate                  Auth.Authenticate
+POST    /api/auth/verify                        Auth.Verify
+GET     /api/auth/profile                       Auth.Profile

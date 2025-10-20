@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DegenHF.NET_MAUI.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="DegenHF ECC Auth"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Blockchain-Grade Authentication for .NET MAUI"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="18"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource Gray200}" />
+
+            <Label
+                Text="This MAUI app demonstrates ECC-based authentication with Argon2+BLAKE3 password hashing and JWT tokens."
+                FontSize="16"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource Gray300}" />
+
+            <Button
+                x:Name="ApiServerButton"
+                Text="Start API Server"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Clicked="OnApiServerClicked" />
+
+            <Label
+                x:Name="StatusLabel"
+                Text=""
+                FontSize="14"
+                HorizontalOptions="Center"
+                TextColor="{DynamicResource Gray400}" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

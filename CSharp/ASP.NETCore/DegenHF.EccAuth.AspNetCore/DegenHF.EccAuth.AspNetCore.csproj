@@ -8,7 +8,7 @@
     <Version>1.0.0</Version>
     <Authors>DegenHF</Authors>
     <Description>ECC-based authentication for ASP.NET Core with enhanced security</Description>
-    <RepositoryUrl>https://github.com/degenwithheart/DegenHF</RepositoryUrl>
+    <RepositoryUrl>https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
