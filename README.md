@@ -74,6 +74,9 @@ Performance optimizations:
 | **JavaScript** | Express.js, Next.js, NestJS | ✅ Complete |
 | **Java** | Spring Boot, Jakarta EE | ✅ Complete |
 | **PHP** | Laravel | ✅ Complete |
+| **Go** | Gin, Echo | ✅ Complete |
+| **C#** | ASP.NET Core | ✅ Complete |
+| **Rust** | Rocket | ✅ Complete |
 
 ### 🚧 **Planned**
 
@@ -181,25 +184,25 @@ $user = EccAuth::verifyToken($token);
 ### Python
 ```bash
 # Django
-pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/Django
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Django
 
 # Flask
-pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/Flask
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/Flask
 
 # FastAPI
-pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/FastAPI
+pip install git+https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=Python/FastAPI
 ```
 
 ### JavaScript
 ```bash
 # Express.js
-npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/Express.js
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Express.js
 
 # Next.js
-npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/Next.js
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/Next.js
 
 # NestJS
-npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/NestJS
+npm install https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git#subdirectory=JavaScript/NestJS
 ```
 
 ### Java
@@ -234,7 +237,7 @@ npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScrip
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/degenwithheart/DegenHF"
+            "url": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework"
         }
     ],
     "require": {
@@ -244,6 +247,31 @@ npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScrip
 
 # Or install directly
 composer require degenhf/ecc-auth-laravel @dev
+```
+
+### Go
+```bash
+# Gin
+go get github.com/degenwithheart/DegenHF/Go/Gin
+
+# Echo
+go get github.com/degenwithheart/DegenHF/Go/Echo
+```
+
+### C#
+```bash
+# Add GitHub as NuGet source
+dotnet nuget add source https://nuget.pkg.github.com/degenwithheart/index.json -n github -u degenwithheart -p YOUR_TOKEN
+
+# Install ASP.NET Core package
+dotnet add package DegenHF.EccAuth.AspNetCore --version 1.0.0
+```
+
+### Rust
+```toml
+# Add to Cargo.toml
+[dependencies]
+degenhf-ecc-auth-rocket = { git = "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework", path = "Rust/Rocket" }
 ```
 
 ---

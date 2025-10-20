@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>DegenHF.EccAuth.AspNetCore</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>DegenHF</Authors>
+    <Description>ECC-based authentication for ASP.NET Core with enhanced security</Description>
+    <RepositoryUrl>https://github.com/degenwithheart/DegenHF</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DegenHF.EccAuth\DegenHF.EccAuth.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+</Project>
