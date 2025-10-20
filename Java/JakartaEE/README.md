@@ -14,13 +14,20 @@ Enhanced Jakarta EE authentication module with ECC-based security, optimized for
 
 ## Installation
 
-Add to your `pom.xml`:
+Since this package is currently only available from the GitHub repository, add JitPack repository and dependency to your `pom.xml`:
 
 ```xml
+<reositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>com.degenhf</groupId>
-    <artifactId>ecc-auth-jakarta</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.github.degenwithheart.DegenHF</groupId>
+    <artifactId>degenhf-ecc-auth-jakarta</artifactId>
+    <version>main-SNAPSHOT</version>
 </dependency>
 ```
 

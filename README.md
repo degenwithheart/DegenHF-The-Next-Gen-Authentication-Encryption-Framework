@@ -176,32 +176,74 @@ $user = EccAuth::verifyToken($token);
 
 ## 🔧 Installation
 
+> **Note:** These packages are currently available only from this GitHub repository. They are not yet published to PyPI, npm, Maven Central, or Packagist.
+
 ### Python
 ```bash
-pip install degenhf-django
-pip install degenhf-flask
-pip install degenhf-fastapi
+# Django
+pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/Django
+
+# Flask
+pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/Flask
+
+# FastAPI
+pip install git+https://github.com/degenwithheart/DegenHF.git#subdirectory=Python/FastAPI
 ```
 
 ### JavaScript
 ```bash
-npm install degenhf-express
-npm install degenhf-nextjs
-npm install degenhf-nestjs
+# Express.js
+npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/Express.js
+
+# Next.js
+npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/Next.js
+
+# NestJS
+npm install https://github.com/degenwithheart/DegenHF.git#subdirectory=JavaScript/NestJS
 ```
 
 ### Java
 ```xml
+<!-- Add JitPack repository to your pom.xml -->
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
+<!-- Spring Boot -->
 <dependency>
-    <groupId>com.degenhf</groupId>
-    <artifactId>ecc-auth-spring-boot</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.github.degenwithheart.DegenHF</groupId>
+    <artifactId>degenhf-ecc-auth-spring-boot</artifactId>
+    <version>main-SNAPSHOT</version>
+</dependency>
+
+<!-- Jakarta EE -->
+<dependency>
+    <groupId>com.github.degenwithheart.DegenHF</groupId>
+    <artifactId>degenhf-ecc-auth-jakarta</artifactId>
+    <version>main-SNAPSHOT</version>
 </dependency>
 ```
 
 ### PHP
 ```bash
-composer require degenhf/ecc-auth-laravel
+# Add to composer.json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/degenwithheart/DegenHF"
+        }
+    ],
+    "require": {
+        "degenhf/ecc-auth-laravel": "dev-main"
+    }
+}
+
+# Or install directly
+composer require degenhf/ecc-auth-laravel @dev
 ```
 
 ---

@@ -14,13 +14,20 @@ Enhanced Spring Boot authentication module with ECC-based security, optimized fo
 
 ## Installation
 
-Add to your `pom.xml`:
+Since this package is currently only available from the GitHub repository, add JitPack repository and dependency to your `pom.xml`:
 
 ```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>com.degenhf</groupId>
-    <artifactId>ecc-auth-spring-boot</artifactId>
-    <version>1.0.0</version>
+    <groupId>com.github.degenwithheart.DegenHF</groupId>
+    <artifactId>degenhf-ecc-auth-spring-boot</artifactId>
+    <version>main-SNAPSHOT</version>
 </dependency>
 ```
 
