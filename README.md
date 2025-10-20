@@ -197,17 +197,23 @@ $user = EccAuth::verifyToken($token);
 ### Repository Structure
 ```
 DegenHF/
-├── Python/           # Django, Flask, FastAPI
-├── JavaScript/       # Express.js, Next.js, NestJS
-├── Java/            # Spring Boot, Jakarta EE
-├── PHP/             # Laravel
-├── Kotlin/          # Ktor, Spring Boot
-├── Swift/           # Vapor, Kitura
-├── Ruby/            # Rails, Sinatra
-├── Go/              # Gin, Echo, Revel
-├── CSharp/          # ASP.NET Core, .NET MAUI
-├── Rust/            # Rocket, Actix
-└── GameEngines/     # Unity, Unreal, Cocos, Godot
+├── Languages/        # Web & Mobile Frameworks
+│   ├── Python/           # Django, Flask, FastAPI
+│   ├── JavaScript/       # Express.js, Next.js, NestJS
+│   ├── Java/            # Spring Boot, Jakarta EE
+│   ├── PHP/             # Laravel
+│   ├── Kotlin/          # Ktor, Spring Boot
+│   ├── Swift/           # Vapor, Kitura
+│   ├── Ruby/            # Rails, Sinatra
+│   ├── Go/              # Gin, Echo, Revel
+│   ├── CSharp/          # ASP.NET Core, .NET MAUI
+│   └── Rust/            # Rocket, Actix
+└── GameEngines/     # Game Development Frameworks
+    ├── Unity/           # Unity Engine (C#)
+    ├── Unreal/          # Unreal Engine (C++)
+    ├── Cocos2d-x/       # Cocos2d-x (C++)
+    ├── Godot/           # Godot Engine (C#)
+    └── CocosCreator/    # Cocos Creator (JavaScript)
 ```
 
 ### Quick Setup
@@ -217,7 +223,8 @@ git clone https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-
 cd DegenHF-The-Next-Gen-Authentication-Encryption-Framework
 
 # Navigate to your preferred framework
-cd Python/Django    # or any other framework directory
+cd Languages/Python/Django    # or any other framework directory
+cd GameEngines/Unity          # for game engine integrations
 
 # Follow the README.md in each framework directory for setup
 ```
@@ -225,25 +232,37 @@ cd Python/Django    # or any other framework directory
 ### Python
 ```bash
 # Django
-cd Python/Django && pip install -e .
+cd Languages/Python/Django && pip install -e .
 
 # Flask
-cd Python/Flask && pip install -e .
+cd Languages/Python/Flask && pip install -e .
 
 # FastAPI
-cd Python/FastAPI && pip install -e .
+cd Languages/Python/FastAPI && pip install -e .
 ```
 
 ### JavaScript
 ```bash
 # Express.js
-cd JavaScript/Express.js && npm install
+cd Languages/JavaScript/Express.js && npm install
 
 # Next.js
-cd JavaScript/Next.js && npm install
+cd Languages/JavaScript/Next.js && npm install
 
 # NestJS
-cd JavaScript/NestJS && npm install
+cd Languages/JavaScript/NestJS && npm install
+```
+
+### Game Engines
+```bash
+# Unity (via Unity Package Manager)
+# Add: https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework.git?path=GameEngines/Unity/Assets/DegenHF
+
+# Unreal Engine
+cd GameEngines/Unreal && # Follow setup instructions
+
+# Godot
+cd GameEngines/Godot && # Follow setup instructions
 ```
 
 ---
