@@ -1,0 +1,25 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "DegenHF ECC Authentication",
+	"Description": "Blockchain-grade ECC authentication for Unreal Engine games",
+	"Category": "Gameplay",
+	"CreatedBy": "DegenHF",
+	"CreatedByURL": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "https://github.com/degenwithheart/DegenHF-The-Next-Gen-Authentication-Encryption-Framework",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "DegenHF",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"PlatformAllowList": [ "Win64", "Mac", "Linux", "IOS", "Android", "PS4", "PS5", "XboxOne", "XboxSeriesX", "Switch" ]
+		}
+	]
+}
