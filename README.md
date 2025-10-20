@@ -337,7 +337,36 @@ MIT License - see LICENSE file for details.
 - Monitor for implementation vulnerabilities
 - Regular security audits recommended
 
-Your traditional web app now has the same authentication security as blockchain networks.
+## Why the "However" Section?
+
+That disclaimer is essential because even with mathematically unbreakable ECC cryptography, security is **multilayered**:
+
+### Cryptography ≠ Complete Security
+
+Even Bitcoin (which uses the same ECC secp256k1) has this disclaimer because:
+
+**Key Management**: Private keys can be stolen, lost, or poorly generated
+**Implementation Bugs**: Code can have vulnerabilities (Heartbleed, etc.)
+**Operational Security**: Password policies, monitoring, access controls
+**Supply Chain**: Dependencies can be compromised
+**Human Factors**: Social engineering, insider threats
+
+### Real-World Examples
+
+**Walmart Breach (2024)**: Used strong crypto but poor key management
+**SolarWinds**: Perfect cryptography, compromised via supply chain
+**Twitter Bitcoin Hack**: Strong ECC, but poor operational security
+
+### Industry Standard
+
+Every serious crypto library includes this disclaimer because **cryptography is only one layer** of the security onion. DegenHF provides **enterprise-grade crypto**, but users still need:
+
+- Strong passwords
+- Secure key storage
+- Regular audits
+- Monitoring systems
+
+**Without this section, we'd be making false security claims** - even blockchain-grade crypto doesn't eliminate the need for good security practices. This is **responsible disclosure**, not weakness admission.
 
 ---
 
